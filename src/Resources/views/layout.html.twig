@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ app.request.basePath }}/assets/css/screen.css">
+    <script>var basePath = "{{ app.request.basePath }}";</script>
+</head>
+<body>
+    {% block content %}{% endblock %}
+    <script href="{{ app.request.basePath }}/assets/js/front.js"></script>
+</body>
+</html>

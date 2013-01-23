@@ -1,0 +1,36 @@
+{
+    "name": "c2is/silex-bootstrap",
+    "authors": [
+        {
+            "name": "Morgan Brunot",
+            "email": "brunot.morgan@gmail.com",
+            "homepage": "http://oziks.fr"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "silex/silex": "1.0.*",
+        "twig/twig": ">=1.8.0,<2.0-dev",
+        "monolog/monolog": ">=1.0.0,<1.2-dev",
+        "symfony/process": "2.1.*",
+        "symfony/security": "2.1.*",
+        "symfony/filesystem": "2.1.*",
+        "symfony/class-loader": "2.1.*",
+        "symfony/form": "2.1.*",
+        "symfony/translation": "2.1.*",
+        "symfony/validator": "2.1.*",
+        "symfony/twig-bridge": "2.1.*",
+        "symfony/config": "2.1.*",
+        "propel/propel1": "1.6.*",
+        "propel/propel-service-provider": "dev-master",
+        "knplabs/console-service-provider": "dev-master",
+        "oziks/debug-toolbar-service-provider": "dev-master"
+    },
+    "scripts": {
+        "post-install-cmd": "Core\\Composer\\Script::postInstall"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": { "": "src/" }
+    }
+}

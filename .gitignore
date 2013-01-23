@@ -1,0 +1,5 @@
+/src/Resources/config/databases.xml
+/src/Resources/config/generated
+/vendor
+/composer.lock
+*.log

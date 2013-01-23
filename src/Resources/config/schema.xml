@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database name="%database_name%" namespace="%application_name%\Model" defaultIdMethod="native">
+    <table name="project">
+        <column name="id" type="integer" primaryKey="true" autoIncrement="true" required="true"/>
+        <column name="url" type="varchar" required="true"/>
+        <column name="owner" type="varchar" required="true"/>
+        <column name="name" type="varchar" required="true"/>
+        <behavior name="timestampable" />
+    </table>
+</database>
