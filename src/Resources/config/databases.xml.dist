@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <propel>
-        <datasources default="%database_name%">
-            <datasource id="%database_name%">
+        <datasources default="%normalized_name%">
+            <datasource id="%normalized_name%">
                 <adapter>mysql</adapter>
                 <connection>
                     <dsn>mysql:host=##host##;dbname=##database##;charset=utf8</dsn>

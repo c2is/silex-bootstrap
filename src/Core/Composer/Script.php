@@ -26,14 +26,17 @@ class Script
 
         self::write(sprintf('guessed application name: <info>%s</info>', $appName));
 
-        self::write('creating your <info>project</info> directory', true);
-        $fs->mkdir('src/'.$appName);
-
         $vars = [
             '%application_name%' => $appName,
             '%normalized_name%' => self::getNormalizedName($appName),
-            '%database_name%' => self::getDatabaseName($appName),
+            '%camel_name%' => self::getCamelName($appName),
         ];
+
+        self::write('creating your <info>project</info> directory', true);
+        $fs->rename('src/App', 'src/'.$vars['%camel_name%']);
+        self::render('web/index.php', $vars);
+        self::render('web/index_dev.php', $vars);
+        self::render('src/Resources/views/index.html.twig', $vars);
 
         self::write('updating <info>bootstrap</info>');
         self::render('src/bootstrap.php', $vars);
@@ -68,6 +71,16 @@ class Script
     private static function getDatabaseName($appName)
     {
         return preg_replace('/[^a-z_]+/', '_', strtolower($appName));
+    }
+
+    private static function getCamelName($appName)
+    {
+        $appName = preg_replace("/([_-\s]?([a-z0-9]+))/e",
+            "ucwords('\\2')",
+            $appName
+        );
+
+        return strtoupper($appName[0]) . substr($appName, 1);
     }
 
     private static function guessApplicationName()
