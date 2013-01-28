@@ -24,7 +24,8 @@
         "propel/propel1": "1.6.*",
         "propel/propel-service-provider": "dev-master",
         "knplabs/console-service-provider": "dev-master",
-        "oziks/debug-toolbar-service-provider": "dev-master"
+        "oziks/debug-toolbar-service-provider": "dev-master",
+        "atoum/atoum": "dev-master"
     },
     "scripts": {
         "post-install-cmd": "Core\\Composer\\Script::postInstall"
