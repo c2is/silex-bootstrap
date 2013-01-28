@@ -25,7 +25,7 @@ use Propel\Silex\PropelServiceProvider;
 
 use Oziks\Provider\DebugToolbarServiceProvider;
 
-$app = new Application();
+$app = new Application(__DIR__, '%application_name%');
 
 $app->register(new FormServiceProvider());
 $app->register(new TranslationServiceProvider());
