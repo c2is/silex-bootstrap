@@ -14,4 +14,8 @@ require_once __DIR__.'/src/bootstrap.php';
 
 $console = $app['console'];
 
+use Core\Command\Tests\UnitsCommand as TestsUnitsCommand;
+
+$console->add(new TestsUnitsCommand());
+
 $console->run();
