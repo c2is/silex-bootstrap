@@ -18,10 +18,12 @@ use Core\Command\Tests\UnitsCommand as TestsUnitsCommand;
 use Core\Command\Migration\UpCommand as MigrationUpCommand;
 use Core\Command\Migration\DownCommand as MigrationDownCommand;
 use Core\Command\Migration\GenerateCommand as MigrationGenerateCommand;
+use Core\Command\Clear\CacheCommand as ClearCacheCommand;
 
 $console->add(new TestsUnitsCommand());
 $console->add(new MigrationUpCommand());
 $console->add(new MigrationDownCommand());
 $console->add(new MigrationGenerateCommand());
+$console->add(new ClearCacheCommand());
 
 $console->run();

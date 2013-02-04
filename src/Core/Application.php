@@ -11,6 +11,7 @@ namespace Core;
 use Silex\Application as BaseApplication;
 
 use Symfony\Component\Config\FileLocator;
+use Symfony\Component\Yaml\Yaml;
 
 class Application extends BaseApplication
 {
@@ -40,5 +41,25 @@ class Application extends BaseApplication
 
             return new FileLocator($configDirectories);
         });
+    }
+
+    public function config($name, $option = null, $default = null, $currentPath = null)
+    {
+        $files = $this['config']->locate(sprintf('%s.yml', $name), $currentPath, false);
+
+        if (null === $option) {
+            return Yaml::parse(end($files));
+        }
+
+        $config = $default;
+        foreach ($files as $file) {
+            $configValues = Yaml::parse($file);
+
+            if (isset($configValues[$option])) {
+                $config = $configValues[$option];
+            }
+        }
+
+        return $config;
     }
 }
