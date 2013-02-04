@@ -29,4 +29,39 @@ class Application extends atoum\test
                 ->isTrue()
         ;
     }
+
+    public function testConfig()
+    {
+        $app = new CoreApplication(__DIR__, 'test');
+
+        $result = $app->config('application', null, null, __DIR__.'/../snippets');
+        $this
+            ->array($result)
+            ->hasSize(2)
+            ->hasKeys(array('foo', 'foobar'))
+            ->notHasKey('bar')
+            ->containsValues(array(array('bar' => 'foo.bar value'), 'foobar value'))
+        ;
+
+        $result = $app->config('application', 'foo', null, __DIR__.'/../snippets');
+        $this
+            ->array($result)
+            ->hasSize(1)
+            ->hasKey('bar')
+            ->contains('foo.bar value')
+        ;
+
+        $result = $app->config('application', 'barfoo', null, __DIR__.'/../snippets');
+        $this
+            ->variable($result)
+            ->isNull()
+        ;
+
+        $result = $app->config('application', 'barfoo', 'barfoo value', __DIR__.'/../snippets');
+        $this
+            ->variable($result)
+            ->isNotNull()
+            ->isEqualTo('barfoo value')
+        ;
+    }
 }
