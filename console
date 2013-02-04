@@ -15,7 +15,13 @@ require_once __DIR__.'/src/bootstrap.php';
 $console = $app['console'];
 
 use Core\Command\Tests\UnitsCommand as TestsUnitsCommand;
+use Core\Command\Migration\UpCommand as MigrationUpCommand;
+use Core\Command\Migration\DownCommand as MigrationDownCommand;
+use Core\Command\Migration\GenerateCommand as MigrationGenerateCommand;
 
 $console->add(new TestsUnitsCommand());
+$console->add(new MigrationUpCommand());
+$console->add(new MigrationDownCommand());
+$console->add(new MigrationGenerateCommand());
 
 $console->run();
