@@ -21,10 +21,10 @@
         "symfony/validator": "2.1.*",
         "symfony/twig-bridge": "2.1.*",
         "symfony/config": "2.1.*",
+        "symfony/finder": "2.1.*",
         "propel/propel1": "1.6.*",
         "propel/propel-service-provider": "dev-master",
         "knplabs/console-service-provider": "dev-master",
-        "oziks/debug-toolbar-service-provider": "dev-master",
         "atoum/atoum": "dev-master"
     },
     "scripts": {
