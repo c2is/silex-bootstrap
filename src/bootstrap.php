@@ -34,7 +34,10 @@ $app->register(new SessionServiceProvider());
 $app->register(new UrlGeneratorServiceProvider());
 
 $app->register(new TwigServiceProvider(), [
-    'twig.path' => array_merge(array(__DIR__.'/Resources/views/'), glob(__DIR__.'/*/Resources/views/')),
+    'twig.path'    => array_merge(array(__DIR__.'/Resources/views/'), glob(__DIR__.'/*/Resources/views/')),
+    'twig.options' => array(
+        'cache' => __DIR__ . '/../cache/twig'
+    ),
 ]);
 
 $app->register(new MonologServiceProvider(), [
