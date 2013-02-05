@@ -30,7 +30,7 @@ class UnitsCommand extends Command
         $atoum     = $this->getProjectDirectory().'/vendor/bin/atoum';
         $unitTests = $this->getProjectDirectory().'/tests';
 
-        passthru(sprintf('%s -d %s', $atoum, $unitTests), $status);
+        passthru(sprintf('%s -d %s -ft', $atoum, $unitTests), $status);
 
         return $status;
     }
