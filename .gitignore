@@ -4,4 +4,5 @@
 /vendor
 /composer.lock
 /migrations
+/tests/behat.yml
 *.log

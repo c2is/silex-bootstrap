@@ -1,0 +1,11 @@
+default:
+    paths:
+        features:  features
+        bootstrap: %behat.paths.features%/bootstrap
+    formatter:
+        name: pretty
+    extensions:
+        Behat\MinkExtension\Extension:
+            base_url: ##project_base_url##
+            goutte: ~
+            selenium2: ~
