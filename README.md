@@ -10,16 +10,22 @@ A [Silex](http://silex.sensiolabs.org/) application which uses :
 Installation
 ------------
 
-Clone the silex-bootstrap project :
+Clone the silex-bootstrap project:
 ```shell
-$ git clone git@github.com:c2is/silex-bootstrap.git ProjectName
+$ git clone git@github.com:c2is/silex-bootstrap.git ProjectName && cd ProjectName
 ```
 
-Install vendor libraries with composer :
+Install vendor libraries with composer:
 ```shell
 $ curl -s http://getcomposer.org/installer | php
 $ php composer.phar install
 ```
+
+You can run the application using the PHP built-in webserver:
+```shell
+$ php -S localhost:8000 -t web/
+```
+Open [http://localhost:8000/](http://localhost:8000/) in your browser to see silex-bootstrap running.
 
 For more informations, see [the installation wiki page](https://github.com/c2is/silex-bootstrap/wiki/Installation).
 
