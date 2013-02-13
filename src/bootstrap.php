@@ -18,12 +18,12 @@ use Silex\Provider\TranslationServiceProvider;
 use Silex\Provider\SessionServiceProvider;
 use Silex\Provider\ValidatorServiceProvider;
 use Silex\Provider\SecurityServiceProvider;
+use Silex\Provider\ServiceControllerServiceProvider;
+use Silex\Provider\WebProfilerServiceProvider;
 
 use Knp\Provider\ConsoleServiceProvider;
 
 use Propel\Silex\PropelServiceProvider;
-
-use Oziks\Provider\DebugToolbarServiceProvider;
 
 $app = new Application(__DIR__, '%application_name%');
 
@@ -49,6 +49,12 @@ $app->register(new ConsoleServiceProvider(), [
     'console.version'           => '0',
     'console.project_directory' => __DIR__.'/..',
 ]);
+
+$app->register($webProfiler = new WebProfilerServiceProvider(), array(
+    'profiler.cache_dir' => __DIR__.'/../cache/profiler',
+));
+
+$app->mount('/_profiler', $webProfiler);
 
 // disabled propel if config file not exist
 if (file_exists($propelConfigFile = __DIR__.'/Resources/config/generated/%normalized_name%-conf.php')) {

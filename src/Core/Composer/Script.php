@@ -18,6 +18,10 @@ class Script
 
     public static function postInstall(Event $event)
     {
+        if (file_exists('composer.lock')) {
+            return;
+        }
+
         $fs = new Filesystem();
 
         self::$output = new ConsoleOutput();
