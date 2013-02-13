@@ -22,3 +22,14 @@ See [issues section](https://github.com/c2is/silex-bootstrap/issues).
 Contributors
 ------
 See [contributors section](https://github.com/c2is/silex-bootstrap/graphs/contributors).
+
+Run the test suite
+------
+Functional tests are written with [Behat](http://behat.org/).
+```shell
+$ ./console tests:features
+```
+Unit tests are written with [Atoum](http://docs.atoum.org/).
+```shell
+$ ./console tests:units
+```
