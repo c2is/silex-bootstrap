@@ -81,7 +81,7 @@ class Script
 
     private static function getCamelName($appName)
     {
-        $appName = preg_replace("/([_-\s]?([a-z0-9]+))/e",
+        $appName = preg_replace("/([_-\s]?([a-zA-Z0-9]+))/e",
             "ucwords('\\2')",
             $appName
         );
