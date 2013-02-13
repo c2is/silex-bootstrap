@@ -18,7 +18,7 @@ class Script
 
     public static function postInstall(Event $event)
     {
-        if (file_exists('composer.lock')) {
+        if (file_exists('bootstrap.lock')) {
             return;
         }
 
@@ -56,6 +56,8 @@ class Script
 
         self::write('removing silex-bootstrap\'s git directory');
         $fs->remove('.git');
+
+        file_put_contents("bootstrap.lock", "");
 
         self::write('your application is ready', true);
     }
