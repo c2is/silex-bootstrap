@@ -21,6 +21,8 @@ $ curl -s http://getcomposer.org/installer | php
 $ php composer.phar install
 ```
 
+For more informations, see [the installation wiki page](https://github.com/c2is/silex-bootstrap/wiki/Installation).
+
 Screenshots
 -----------
 ![](https://raw.github.com/c2is/silex-bootstrap/master/doc/screenshot_1.png)
