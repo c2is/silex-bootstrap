@@ -1,6 +1,12 @@
 silex-bootstrap
 ===============
 
+A [Silex](http://silex.sensiolabs.org/) application which uses :
+* [Propel](http://propelorm.org/)
+* [Silex Web Profiler](http://fabien.potencier.org/article/66/debugging-silex-applications-just-got-funnier)
+* [Behat](http://behat.org/)
+* [Atoum](http://www.atoum.org/)
+
 Installation
 ------------
 
@@ -14,6 +20,10 @@ Install vendor libraries with composer :
 $ curl -s http://getcomposer.org/installer | php
 $ php composer.phar install
 ```
+
+Screenshots
+-----------
+![](https://raw.github.com/c2is/silex-bootstrap/master/doc/screenshot_1.png)
 
 Issues
 ------
@@ -33,3 +43,8 @@ Unit tests are written with [Atoum](http://docs.atoum.org/).
 ```shell
 $ ./console tests:units
 ```
+
+License
+-------
+
+silex-bootstrap is released under the GPL License. See the bundled LICENSE file for details.
