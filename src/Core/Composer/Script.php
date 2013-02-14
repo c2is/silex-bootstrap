@@ -92,7 +92,13 @@ class Script
     private static function guessApplicationName()
     {
         $defaultName = basename(getcwd());
-        $typedName = readline(sprintf('Type your project\'s name here (default will be %s):', $defaultName));
+        in_array("--dev", $_SERVER['argv']) ? $devMode = true : $devMode = false;
+        if (!$devMode) {
+            $typedName = readline(sprintf('Type your project\'s name here (default will be %s):', $defaultName));
+        }
+        else {
+            $typedName = "";
+        }
 
         return $typedName == "" ? $defaultName : $typedName;
     }
