@@ -91,7 +91,10 @@ class Script
 
     private static function guessApplicationName()
     {
-        return basename(getcwd());
+        $defaultName = basename(getcwd());
+        $typedName = readline(sprintf('Type your project\'s name here (default will be %s):', $defaultName));
+
+        return $typedName == "" ? $defaultName : $typedName;
     }
 
     private static function write($message)

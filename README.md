@@ -12,7 +12,7 @@ Installation
 
 Clone the silex-bootstrap project:
 ```shell
-$ git clone git@github.com:c2is/silex-bootstrap.git ProjectName && cd ProjectName
+$ git clone git@github.com:c2is/silex-bootstrap.git && cd silex-bootstrap
 ```
 
 Install vendor libraries with composer:
