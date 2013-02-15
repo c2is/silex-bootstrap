@@ -1,6 +1,8 @@
 silex-bootstrap
 ===============
 
+![](https://api.travis-ci.org/c2is/silex-bootstrap.png)
+
 A [Silex](http://silex.sensiolabs.org/) application which uses :
 * [Propel](http://propelorm.org/)
 * [Silex Web Profiler](http://fabien.potencier.org/article/66/debugging-silex-applications-just-got-funnier)
