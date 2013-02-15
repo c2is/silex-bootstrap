@@ -94,7 +94,8 @@ class Script
         $defaultName = basename(getcwd());
         in_array("--dev", $_SERVER['argv']) ? $devMode = true : $devMode = false;
         if (!$devMode) {
-            $typedName = readline(sprintf('Type your project\'s name here (default will be %s):', $defaultName));
+            printf('Type your project\'s name here (default will be %s):', $defaultName);
+            $typedName = stream_get_line(STDIN, 1024, PHP_EOL);
         }
         else {
             $typedName = "";
