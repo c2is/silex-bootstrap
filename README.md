@@ -1,13 +1,13 @@
-silex-bootstrap
+silex-bootstrap ![](https://api.travis-ci.org/c2is/silex-bootstrap.png)
 ===============
 
-![](https://api.travis-ci.org/c2is/silex-bootstrap.png)
-
-A [Silex](http://silex.sensiolabs.org/) application which uses :
-* [Propel](http://propelorm.org/)
+**silex-bootstrap** is nothing more than [Silex](http://silex.sensiolabs.org/) with some stuff already set up for you:
+* Template rendering with [Twig](http://twig.sensiolabs.org/)
+* Database interface with [Propel](http://propelorm.org/)
+* Directory structure for your project
 * [Silex Web Profiler](http://fabien.potencier.org/article/66/debugging-silex-applications-just-got-funnier)
-* [Behat](http://behat.org/)
-* [Atoum](http://www.atoum.org/)
+* Functional test environment with [Behat](http://behat.org/)
+* Unit test environment with [Atoum](http://www.atoum.org/)
 
 Installation
 ------------
@@ -43,18 +43,6 @@ Contributors
 ------
 See [contributors section](https://github.com/c2is/silex-bootstrap/graphs/contributors).
 
-Run the test suite
-------
-Functional tests are written with [Behat](http://behat.org/).
-```shell
-$ ./console tests:features
-```
-Unit tests are written with [Atoum](http://docs.atoum.org/).
-```shell
-$ ./console tests:units
-```
-
 License
 -------
-
 silex-bootstrap is released under the GPL License. See the bundled LICENSE file for details.
