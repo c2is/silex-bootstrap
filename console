@@ -19,6 +19,7 @@ use Core\Command\Tests\FeaturesCommand as TestsFeaturesCommand;
 use Core\Command\Migration\UpCommand as MigrationUpCommand;
 use Core\Command\Migration\DownCommand as MigrationDownCommand;
 use Core\Command\Migration\GenerateCommand as MigrationGenerateCommand;
+use Core\Command\Propel\GenerateCommand as PropelGenerateCommand;
 use Core\Command\Clear\CacheCommand as ClearCacheCommand;
 
 $console->add(new TestsUnitsCommand());
@@ -26,6 +27,7 @@ $console->add(new TestsFeaturesCommand());
 $console->add(new MigrationUpCommand());
 $console->add(new MigrationDownCommand());
 $console->add(new MigrationGenerateCommand());
+$console->add(new PropelGenerateCommand());
 $console->add(new ClearCacheCommand());
 
 $console->run();
