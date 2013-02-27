@@ -6,9 +6,9 @@
  * (c) Morgan Brunot <brunot.morgan@gmail.com>
  */
 
-$app['debug'] = true;
-
 require_once __DIR__.'/../src/bootstrap.php';
+
+$app['debug'] = true;
 
 require_once __DIR__.'/../src/%camel_name%/app.php';
 
