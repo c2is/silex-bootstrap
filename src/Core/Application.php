@@ -10,6 +10,7 @@ namespace Core;
 
 use Silex\Application as BaseApplication;
 
+use Symfony\Component\Routing\Loader\YamlFileLoader;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Yaml\Yaml;
 
@@ -41,6 +42,15 @@ class Application extends BaseApplication
 
             return new FileLocator($configDirectories);
         });
+
+        $this['routes'] = $this->share($this->extend('routes', function ($routes, $this) {
+            $loader = new YamlFileLoader($this['config']);
+            $collection = $loader->load('routing.yml');
+
+            $routes->addCollection($collection);
+
+            return $routes;
+        }));
     }
 
     public function config($name, $option = null, $default = null, $currentPath = null)

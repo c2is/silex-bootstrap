@@ -1,0 +1,5 @@
+homepage:
+    pattern:   /
+    defaults:  { _controller: %camel_name%\Controller\MainController::homeAction }
+    requirements:
+        _method:  GET

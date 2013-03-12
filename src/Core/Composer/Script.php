@@ -50,6 +50,10 @@ class Script
         self::render('src/Resources/config/databases.xml.dist', $vars);
         self::render('src/Resources/config/schema.xml', $vars);
 
+        self::write('updating <info>default routing file</info>');
+        self::render('src/'.$vars['%camel_name%'].'/Resources/config/routing.yml', $vars);
+        self::render('src/'.$vars['%camel_name%'].'/Controller/MainController.php', $vars);
+
         self::write('creating <info>log file</info>');
         $fs->touch($vars['%normalized_name%'].'.log');
         $fs->chmod($vars['%normalized_name%'].'.log', 0777);
