@@ -1,33 +1,26 @@
 {
     "name": "c2is/silex-bootstrap",
-    "authors": [
-        {
-            "name": "Morgan Brunot",
-            "email": "brunot.morgan@gmail.com",
-            "homepage": "http://oziks.fr"
-        }
-    ],
+    "authors": [{
+        "name": "Morgan Brunot",
+        "email": "brunot.morgan@gmail.com",
+        "homepage": "http://oziks.fr"
+    }],
     "require": {
         "php": ">=5.4",
         "silex/silex": "1.0.*",
         "silex/web-profiler": "~1.0@dev",
         "twig/twig": ">=1.8.0,<2.0-dev",
-        "monolog/monolog": ">=1.0.0,<1.2-dev",
-        "symfony/class-loader": "2.2.*",
-        "symfony/config": "2.2.*",
-        "symfony/dependency-injection": "2.2.*",
+        "symfony/twig-bridge": "2.2.*",
         "symfony/filesystem": "2.2.*",
         "symfony/finder": "2.2.*",
-        "symfony/form": "2.2.*",
-        "symfony/process": "2.2.*",
-        "symfony/security": "2.2.*",
-        "symfony/translation": "2.2.*",
-        "symfony/twig-bridge": "2.2.*",
-        "symfony/validator": "2.2.*",
+        "symfony/config": "2.2.*",
         "symfony/yaml": "2.2.*",
+        "symfony/form": "2.2.*",
         "propel/propel1": "1.6.*",
         "propel/propel-service-provider": "dev-master",
-        "knplabs/console-service-provider": "dev-master",
+        "knplabs/console-service-provider": "dev-master"
+    },
+    "require-dev": {
         "atoum/atoum": "dev-master",
         "behat/behat": "2.4.x-dev",
         "behat/mink": "1.4.*@stable",
@@ -40,6 +33,8 @@
     },
     "minimum-stability": "dev",
     "autoload": {
-        "psr-0": { "": "src/" }
+        "psr-0": {
+            "": "src/"
+        }
     }
 }

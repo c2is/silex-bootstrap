@@ -12,25 +12,15 @@ use Core\Application;
 
 use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\UrlGeneratorServiceProvider;
-use Silex\Provider\MonologServiceProvider;
 use Silex\Provider\FormServiceProvider;
-use Silex\Provider\TranslationServiceProvider;
-use Silex\Provider\SessionServiceProvider;
-use Silex\Provider\ValidatorServiceProvider;
-use Silex\Provider\SecurityServiceProvider;
 use Silex\Provider\ServiceControllerServiceProvider;
 use Silex\Provider\WebProfilerServiceProvider;
-
 use Knp\Provider\ConsoleServiceProvider;
-
 use Propel\Silex\PropelServiceProvider;
 
 $app = new Application(__DIR__, '%application_name%');
 
 $app->register(new FormServiceProvider());
-$app->register(new TranslationServiceProvider());
-$app->register(new ValidatorServiceProvider());
-$app->register(new SessionServiceProvider());
 $app->register(new ServiceControllerServiceProvider());
 $app->register(new UrlGeneratorServiceProvider());
 
@@ -39,10 +29,6 @@ $app->register(new TwigServiceProvider(), [
     'twig.options' => array(
         'cache' => __DIR__ . '/../cache/twig'
     ),
-]);
-
-$app->register(new MonologServiceProvider(), [
-    'monolog.logfile' => __DIR__.'/../%normalized_name%.log',
 ]);
 
 $app->register(new ConsoleServiceProvider(), [
