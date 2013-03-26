@@ -22,7 +22,7 @@ class Script
             return;
         }
 
-        $fs = new Filesystem();
+        $filesystem = new Filesystem();
 
         self::$output = new ConsoleOutput();
 
@@ -37,7 +37,7 @@ class Script
         ];
 
         self::write('creating your <info>project</info> directory', true);
-        $fs->rename('src/App', 'src/'.$vars['%camel_name%']);
+        $filesystem->rename('src/App', 'src/'.$vars['%camel_name%']);
         self::render('web/index.php', $vars);
         self::render('web/index_dev.php', $vars);
         self::render('src/Resources/views/index.html.twig', $vars);
@@ -55,11 +55,11 @@ class Script
         self::render('src/'.$vars['%camel_name%'].'/Controller/MainController.php', $vars);
 
         self::write('creating <info>log file</info>');
-        $fs->touch($vars['%normalized_name%'].'.log');
-        $fs->chmod($vars['%normalized_name%'].'.log', 0777);
+        $filesystem->touch($vars['%normalized_name%'].'.log');
+        $filesystem->chmod($vars['%normalized_name%'].'.log', 0777);
 
         self::write('removing silex-bootstrap\'s git directory');
-        $fs->remove('.git');
+        $filesystem->remove('.git');
 
         file_put_contents("bootstrap.lock", "");
 
@@ -76,11 +76,6 @@ class Script
     private static function getNormalizedName($appName)
     {
         return preg_replace('/[^a-z_-]+/', '_', strtolower($appName));
-    }
-
-    private static function getDatabaseName($appName)
-    {
-        return preg_replace('/[^a-z_]+/', '_', strtolower($appName));
     }
 
     private static function getCamelName($appName)
