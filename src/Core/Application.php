@@ -43,7 +43,7 @@ class Application extends BaseApplication
             return new FileLocator($configDirectories);
         });
 
-        $this['routes'] = $this->share($this->extend('routes', function ($routes, $this) {
+        $this['routes'] = $this->share($this->extend('routes', function ($routes) {
             $loader = new YamlFileLoader($this['config']);
             $collection = $loader->load('routing.yml');
 

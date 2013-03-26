@@ -37,8 +37,8 @@ class CacheCommand extends Command
             ->notName('.gitkeep')
         ;
 
-        $fs = new Filesystem();
-        $fs->remove($finder);
+        $filesystem = new Filesystem();
+        $filesystem->remove($finder);
 
         $output->writeln(sprintf("%s <info>success</info>", $this->getName()));
 
