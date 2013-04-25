@@ -8,6 +8,12 @@
                     <dsn>mysql:host=##host##;dbname=##database##;charset=utf8</dsn>
                     <user>##username##</user>
                     <password>##password##</password>
+                    <settings>
+                        <setting id="charset">utf8</setting>
+                    </settings>
+                    <options>
+                        <option id="MYSQL_ATTR_INIT_COMMAND">SET NAMES utf8</option>
+                    </options>
                 </connection>
             </datasource>
         </datasources>
