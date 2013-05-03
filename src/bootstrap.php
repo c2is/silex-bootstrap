@@ -37,12 +37,6 @@ $app->register(new ConsoleServiceProvider(), [
     'console.project_directory' => __DIR__.'/..',
 ]);
 
-$app->register($webProfiler = new WebProfilerServiceProvider(), array(
-    'profiler.cache_dir' => __DIR__.'/../cache/profiler',
-));
-
-$app->mount('/_profiler', $webProfiler);
-
 // disabled propel if config file not exist
 if (file_exists($propelConfigFile = __DIR__.'/Resources/config/generated/%normalized_name%-conf.php')) {
     $app->register(new PropelServiceProvider(), [
